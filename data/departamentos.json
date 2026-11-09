@@ -1,7 +1,82 @@
 {
-    "actualizado": "2026-11-09",
-    "moneda": "ARS",
-
-    "alojamientos": []
-
+  "actualizado": "2026-11-09",
+  "moneda": "ARS",
+  "alojamientos": [
+    {
+      "id": "1",
+      "activo": true,
+      "nombre": "La Casa de Ailun",
+      "tipo": "Departamento",
+      "zona": "Guaymallén, Mendoza",
+      "direccion": "Severo del Castillo 1643",
+      "precio_desde": 96373,
+      "moneda": "ARS",
+      "descripcion_corta": "Hospedaje con piscina privada, jardín, terraza y estacionamiento gratuito.",
+      "descripcion": "La Casa de Ailun – Hospedaje se encuentra en Guaymallén, Mendoza, y ofrece alojamiento con Wi-Fi gratuito y vistas al jardín. Cuenta con terraza, bar, piscina privada, jardín y estacionamiento privado gratuito.",
+      "capacidad": null,
+      "servicios": [
+        "2 dormitorios",
+        "Sala de estar",
+        "Cocina totalmente equipada",
+        "Heladera",
+        "Hervidor",
+        "2 baños con bidet y ducha",
+        "Aire acondicionado",
+        "Wi-Fi gratuito",
+        "Jardín",
+        "Piscina privada al aire libre",
+        "Estacionamiento privado gratuito",
+        "Terraza",
+        "Bar",
+        "Bañera de hidromasaje en habitación principal"
+      ],
+      "ubicacion": {
+        "direccion": "Severo del Castillo 1643, Guaymallén, Mendoza",
+        "lat": -32.9208305,
+        "long": -68.7191357,
+        "maps_url": "https://www.google.com/maps?q=-32.9208305,-68.7191357"
+      },
+      "reservas": {
+        "url": "https://www.booking.com/hotel/ar/la-cabana-de-ailun.es.html?age=5&age=11&age=12&age=17&aid=964694&app_hotel_id=14452123&checkin=2026-11-14&checkout=2026-12-12&from_sn=android&group_adults=2&group_children=4&no_rooms=1&req_adults=2&req_children=4",
+        "consulta_whatsapp": true
+      },
+      "imagenes": {
+        "carpeta_drive": "1",
+        "archivos": [
+          "a.jpg",
+          "b.jpg",
+          "c.jpg",
+          "d.jpg",
+          "e.jpg",
+          "f.jpg",
+          "g.jpg",
+          "h.jpg",
+          "i.jpg",
+          "j.jpg",
+          "k.jpg",
+          "l.jpg",
+          "m.jpg",
+          "n.jpg",
+          "o.jpg",
+          "p.jpg",
+          "q.jpg",
+          "r.jpg",
+          "s.jpg",
+          "t.jpg",
+          "u.jpg",
+          "v.jpg",
+          "w.jpg",
+          "x.jpg",
+          "y.jpg",
+          "z.jpg",
+          "aa.jpg",
+          "ab.jpg",
+          "ac.jpg",
+          "ad.jpg",
+          "ae.jpg",
+          "af.jpg"
+        ]
+      }
+    }
+  ]
 }
