@@ -7,7 +7,7 @@ const CONFIG = {
     alojamientos: "data/departamentos.json",
 
     // Pegá acá tu NUEVA clave API restringida
-    googleApiKey: "PEGAR_AQUI_TU_CLAVE_NUEVA"
+    googleApiKey: "AIzaSyACva5N9oPhLXuNV-3TjDQj3yMb3UynU5M"
 };
 
 
