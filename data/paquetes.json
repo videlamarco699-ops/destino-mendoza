@@ -230,5 +230,95 @@
         }
       ],
       "actividad": "Circuito sujeto a disponibilidad, clima, peso, edad y requisitos del prestador. Se realiza bajo sus normas de seguridad.",
-      "consulta": "Hola, quiero consultar y reservar el paquete de Canopy  ]
+      "consulta": "Hola, quiero consultar y reservar el paquete de Canopy y Tirolesa."
+    },
+    {
+      "id": "cabalgata-montana",
+      "activo": true,
+      "nombre": "Cabalgata de Montaña",
+      "categoria": "Naturaleza y aventura",
+      "emoji": "🐎",
+      "imagen_principal": "assets/img/paquetes/f.png",
+      "precio_por_persona": 215000,
+      "precio_estado": "estimativo",
+      "duracion": "Medio día",
+      "descripcion": "Disfrutá una experiencia diferente recorriendo paisajes de montaña a caballo. Conectate con la naturaleza y contemplá los escenarios únicos de Mendoza.",
+      "destacado": "Una aventura para disfrutar la montaña de una manera especial.",
+      "incluye": [
+        "Transporte ida y vuelta desde Mendoza capital",
+        "Cabalgata según recorrido contratado",
+        "Acompañamiento del prestador",
+        "Instrucciones básicas para realizar la actividad"
+      ],
+      "no_incluye": [
+        "Comidas y bebidas",
+        "Fotografías o videos",
+        "Servicios adicionales no detallados"
+      ],
+      "itinerario": [
+        {
+          "momento": "Traslado",
+          "detalle": "Salida desde Mendoza hacia el lugar de la cabalgata."
+        },
+        {
+          "momento": "Preparación",
+          "detalle": "Recepción, asignación de caballos e indicaciones del guía."
+        },
+        {
+          "momento": "Cabalgata",
+          "detalle": "Recorrido por senderos y paisajes de montaña."
+        },
+        {
+          "momento": "Regreso",
+          "detalle": "Finalización de la actividad y traslado a Mendoza."
+        }
+      ],
+      "actividad": "La actividad está sujeta a disponibilidad, clima, edad, condición física y requisitos del prestador.",
+      "consulta": "Hola, quiero consultar y reservar la Cabalgata de Montaña."
+    },
+    {
+      "id": "termas-cacheuta",
+      "activo": true,
+      "nombre": "Termas de Cacheuta",
+      "categoria": "Relax y bienestar",
+      "emoji": "♨️",
+      "imagen_principal": "assets/img/paquetes/g.png",
+      "precio_por_persona": 85000,
+      "precio_estado": "estimativo",
+      "duracion": "Día completo",
+      "descripcion": "Regalate un día de descanso en un entorno natural único. Disfrutá las aguas termales y los paisajes de montaña de Cacheuta.",
+      "destacado": "Un día para relajarte y disfrutar de las termas mendocinas.",
+      "incluye": [
+        "Transporte ida y vuelta desde Mendoza capital",
+        "Coordinación del traslado",
+        "Tiempo libre para disfrutar del lugar"
+      ],
+      "no_incluye": [
+        "Entrada al complejo termal",
+        "Comidas y bebidas",
+        "Servicios adicionales",
+        "Gastos personales"
+      ],
+      "itinerario": [
+        {
+          "momento": "Salida",
+          "detalle": "Encuentro y traslado desde Mendoza hacia Cacheuta."
+        },
+        {
+          "momento": "Llegada",
+          "detalle": "Ingreso a la zona del complejo y tiempo libre."
+        },
+        {
+          "momento": "Termas",
+          "detalle": "Jornada para disfrutar las instalaciones, sujeto a la entrada adquirida."
+        },
+        {
+          "momento": "Regreso",
+          "detalle": "Encuentro del grupo y traslado de regreso a Mendoza."
+        }
+      ],
+      "actividad": "La entrada al complejo termal no está incluida en el precio del paquete. Se recomienda consultar disponibilidad y tarifas antes de viajar.",
+      "consulta": "Hola, quiero consultar y reservar el paquete de Termas de Cacheuta."
     }
+  ]
+        }
