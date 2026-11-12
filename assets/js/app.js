@@ -10,7 +10,7 @@ const CONFIG = {
 
   // Dejar vacío hasta configurar una nueva API Key
   // restringida para Google Drive API.
-  googleApiKey: ""
+  googleApiKey: "AIzaSyACva5N9oPhLXuNV-3TjDQj3yMb3UynU5M"
 };
 
 let datosSitio = {};
