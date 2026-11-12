@@ -1,83 +1,161 @@
 {
-"actualizado": "2026-11-09",
-"moneda": "ARS",
-"alojamientos": [
-{
-"id": "1",
-"activo": true,
-"nombre": "La Casa de Ailun",
-"tipo": "Departamento",
-"zona": "Guaymallén, Mendoza",
-"direccion": "Severo del Castillo 1643",
-"precio_desde": 96373,
-"moneda": "ARS",
-"descripcion_corta": "Hospedaje con piscina privada, jardín, terraza y estacionamiento gratuito.",
-"descripcion": "La Casa de Ailun – Hospedaje se encuentra en Guaymallén, Mendoza, y ofrece alojamiento con Wi-Fi gratuito y vistas al jardín. Cuenta con terraza, bar, piscina privada, jardín y estacionamiento privado gratuito.",
-"capacidad": null,
-"servicios": [
-"2 dormitorios",
-"Sala de estar",
-"Cocina totalmente equipada",
-"Heladera",
-"Hervidor",
-"2 baños con bidet y ducha",
-"Aire acondicionado",
-"Wi-Fi gratuito",
-"Jardín",
-"Piscina privada al aire libre",
-"Estacionamiento privado gratuito",
-"Terraza",
-"Bar",
-"Bañera de hidromasaje en habitación principal"
-],
-"ubicacion": {
-"direccion": "Severo del Castillo 1643, Guaymallén, Mendoza",
-"lat": -32.9208305,
-"long": -68.7191357,
-"maps_url": "https://www.google.com/maps?q=-32.9208305,-68.7191357"
-},
-"reservas": {
-"url": "https://www.booking.com/hotel/ar/la-cabana-de-ailun.es.html?age=5&age=11&age=12&age=17&aid=964694&app_hotel_id=14452123&checkin=2026-11-14&checkout=2026-12-12&from_sn=android&group_adults=2&group_children=4&no_rooms=1&req_adults=2&req_children=4",
-"consulta_whatsapp": true
-},
-"imagenes": {
-"carpeta_drive": "1",
-"carpeta_id": "1WTj02kUuojG7fmkbnvofCUQdR8l12Fzr",
-"archivos": [
-"a.jpg",
-"b.jpg",
-"c.jpg",
-"d.jpg",
-"e.jpg",
-"f.jpg",
-"g.jpg",
-"h.jpg",
-"i.jpg",
-"j.jpg",
-"k.jpg",
-"l.jpg",
-"m.jpg",
-"n.jpg",
-"o.jpg",
-"p.jpg",
-"q.jpg",
-"r.jpg",
-"s.jpg",
-"t.jpg",
-"u.jpg",
-"v.jpg",
-"w.jpg",
-"x.jpg",
-"y.jpg",
-"z.jpg",
-"aa.jpg",
-"ab.jpg",
-"ac.jpg",
-"ad.jpg",
-"ae.jpg",
-"af.jpg"
-]
-}
-}
-]
+  "actualizado": "2026-11-12",
+  "moneda": "ARS",
+  "alojamientos": [
+    {
+      "id": "1",
+      "activo": true,
+      "nombre": "La Casa de Ailun",
+      "tipo": "Departamento",
+      "zona": "Guaymallén, Mendoza",
+      "direccion": "Severo del Castillo 1643",
+      "precio_desde": 96373,
+      "moneda": "ARS",
+      "descripcion_corta": "Hospedaje con piscina privada, jardín, terraza y estacionamiento gratuito.",
+      "descripcion": "La Casa de Ailun – Hospedaje se encuentra en Guaymallén, Mendoza, y ofrece alojamiento con Wi-Fi gratuito y vistas al jardín. Cuenta con terraza, bar, piscina privada, jardín y estacionamiento privado gratuito.",
+      "capacidad": null,
+      "servicios": [
+        "2 dormitorios",
+        "Sala de estar",
+        "Cocina totalmente equipada",
+        "Heladera",
+        "Hervidor",
+        "2 baños con bidet y ducha",
+        "Aire acondicionado",
+        "Wi-Fi gratuito",
+        "Jardín",
+        "Piscina privada al aire libre",
+        "Estacionamiento privado gratuito",
+        "Terraza",
+        "Bar",
+        "Bañera de hidromasaje en habitación principal"
+      ],
+      "ubicacion": {
+        "direccion": "Severo del Castillo 1643, Guaymallén, Mendoza",
+        "lat": -32.9208305,
+        "long": -68.7191357,
+        "maps_url": "https://www.google.com/maps?q=-32.9208305,-68.7191357"
+      },
+      "reservas": {
+        "url": "https://www.booking.com/hotel/ar/la-cabana-de-ailun.es.html",
+        "consulta_whatsapp": true
+      },
+      "imagenes": {
+        "carpeta_id": "1WTj02kUuojG7fmkbnvofCUQdR8l12Fzr",
+        "archivos": [
+          "a.jpg", "b.jpg", "c.jpg", "d.jpg",
+          "e.jpg", "f.jpg", "g.jpg", "h.jpg",
+          "i.jpg", "j.jpg", "k.jpg", "l.jpg",
+          "m.jpg", "n.jpg", "o.jpg", "p.jpg",
+          "q.jpg", "r.jpg", "s.jpg", "t.jpg",
+          "u.jpg", "v.jpg", "w.jpg", "x.jpg",
+          "y.jpg", "z.jpg", "aa.jpg", "ab.jpg",
+          "ac.jpg", "ad.jpg", "ae.jpg", "af.jpg"
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "activo": true,
+      "nombre": "Mantram Armonía",
+      "tipo": "Departamento",
+      "zona": "Mendoza",
+      "direccion": "Silvina Ocampo, Barrio Puerto Grande 12 E, Mendoza",
+      "precio_desde": 297920,
+      "moneda": "ARS",
+      "descripcion_corta": "Alojamiento con piscina de temporada, jardín, Wi-Fi y vistas a las montañas.",
+      "descripcion": "Mantram Armonía ofrece alojamiento en Mendoza con piscina de temporada al aire libre, Wi-Fi gratuito y estacionamiento privado gratuito. Cuenta con TV de pantalla plana, baño privado con bidet, ducha y secador de pelo. La zona de cocina dispone de heladera y horno. También cuenta con un jardín ideal para relajarse y disfrutar del entorno natural. Se encuentra frente a las montañas y cerca de la Ruta 82 o Panamericana.",
+      "capacidad": null,
+      "servicios": [
+        "Wi-Fi gratuito",
+        "Estacionamiento gratuito",
+        "Baño privado",
+        "Habitaciones familiares",
+        "Zona de cocina",
+        "Heladera",
+        "Horno",
+        "TV de pantalla plana",
+        "Piscina de temporada al aire libre",
+        "Jardín",
+        "Zona de pícnic",
+        "Vistas a las montañas",
+        "Instalaciones adaptadas para personas con movilidad reducida"
+      ],
+      "ubicacion": {
+        "direccion": "Silvina Ocampo, Barrio Puerto Grande 12 E, Mendoza",
+        "lat": null,
+        "long": null,
+        "maps_url": "https://maps.app.goo.gl/Y9PWfg3VFq3hjMfH8"
+      },
+      "reservas": {
+        "url": "",
+        "consulta_whatsapp": true
+      },
+      "imagenes": {
+        "carpeta_id": "1dJbLRJlk8Zz476IbRwENlXw9NiyyTY8t",
+        "archivos": [
+          "a.jpg", "c.jpg", "d.jpg", "e.jpg",
+          "f.jpg", "g.jpg", "h.jpg", "i.jpg",
+          "j.jpg", "k.jpg", "l.jpg", "m.jpg",
+          "n.jpg", "o.jpg", "p.jpg", "q.jpg",
+          "r.jpg", "s.jpg", "t.jpg", "u.jpg",
+          "v.jpg", "w.jpg", "x.jpg", "y.jpg",
+          "z.jpg", "aa.jpg", "ab.jpg", "ac.jpg",
+          "ad.jpg", "ae.jpg", "af.jpg"
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "activo": true,
+      "nombre": "La Casa de Ailun - Departamento 2",
+      "tipo": "Departamento",
+      "zona": "Guaymallén, Mendoza",
+      "direccion": "Severo del Castillo 1643",
+      "precio_desde": 96373,
+      "moneda": "ARS",
+      "descripcion_corta": "Departamento con piscina privada, jardín, terraza y estacionamiento gratuito.",
+      "descripcion": "La Casa de Ailun – Hospedaje se encuentra en Guaymallén, Mendoza, y ofrece alojamiento con Wi-Fi gratuito y vistas al jardín. Cuenta con terraza, bar, piscina privada, jardín y estacionamiento privado gratuito.",
+      "capacidad": null,
+      "servicios": [
+        "2 dormitorios",
+        "Sala de estar",
+        "Cocina totalmente equipada",
+        "Heladera",
+        "Hervidor",
+        "2 baños con bidet y ducha",
+        "Aire acondicionado",
+        "Wi-Fi gratuito",
+        "Jardín",
+        "Piscina privada al aire libre",
+        "Estacionamiento privado gratuito",
+        "Terraza",
+        "Bar",
+        "Bañera de hidromasaje en habitación principal"
+      ],
+      "ubicacion": {
+        "direccion": "Severo del Castillo 1643, Guaymallén, Mendoza",
+        "lat": -32.9208305,
+        "long": -68.7191357,
+        "maps_url": "https://www.google.com/maps?q=-32.9208305,-68.7191357"
+      },
+      "reservas": {
+        "url": "https://www.booking.com/hotel/ar/la-cabana-de-ailun.es.html?age=5&age=11&age=12&age=17&aid=964694&app_hotel_id=14452123&checkin=2026-11-14&checkout=2026-12-12&from_sn=android&group_adults=2&group_children=4&label=hotel_pictures-HdcQst%401791682197-py4Rd7%401794174123-zx3Kwi%401794241028-S4nX7O%401794251458&no_rooms=1&req_adults=2&req_age=5&req_age=11&req_age=12&req_age=17&req_children=4&room1=A%2CA%2C5%2C11%2C12%2C17&chal_t=1794251467675&force_referer=",
+        "consulta_whatsapp": true
+      },
+      "imagenes": {
+        "carpeta_id": "1FtBSN5Z8HZsIni6vGFLy5voX0JG6q94b",
+        "archivos": [
+          "a.jpg", "b.jpg", "c.jpg", "d.jpg",
+          "e.jpg", "f.jpg", "g.jpg", "h.jpg",
+          "i.jpg", "j.jpg", "k.jpg", "l.jpg",
+          "m.jpg", "n.jpg", "o.jpg", "p.jpg",
+          "q.jpg", "r.jpg", "s.jpg", "t.jpg",
+          "u.jpg", "v.jpg", "w.jpg", "x.jpg",
+          "y.jpg", "z.jpg", "aa.jpg", "ac.jpg",
+          "ad.jpg", "ae.jpg", "af.jpg"
+        ]
+      }
+    }
+  ]
 }
