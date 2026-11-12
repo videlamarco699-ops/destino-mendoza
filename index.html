@@ -1,153 +1,251 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Destino Mendoza. Alojamientos, excursiones y experiencias turísticas en Mendoza, Argentina.">
+  <title>Destino Mendoza | Turismo & Experiencias</title>
 
-    <meta name="theme-color" content="#09234F">
+  <meta name="description" content="Descubrí Mendoza con Destino Mendoza. Alojamientos, excursiones, aventura, montaña, vinos y experiencias inolvidables.">
 
-    <title>Destino Mendoza | Turismo & Experiencias</title>
-
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
 
-<header class="header">
-    <a href="#inicio" class="marca">
-        <span class="marca-nombre">DESTINO MENDOZA</span>
-        <span class="marca-subtitulo">TURISMO & EXPERIENCIAS</span>
-    </a>
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="contenedor header-contenido">
 
-    <nav class="navegacion">
+      <a href="#" class="logo">
+        <span class="logo-principal">DESTINO MENDOZA</span>
+        <span class="logo-secundario">TURISMO & EXPERIENCIAS</span>
+      </a>
+
+      <nav class="navegacion">
         <a href="#inicio">Inicio</a>
         <a href="#alojamientos">Alojamientos</a>
+        <a href="#paquetes">Excursiones</a>
         <a href="#experiencias">Experiencias</a>
         <a href="#contacto">Contacto</a>
-    </nav>
-</header>
+      </nav>
 
-<main>
+    </div>
+  </header>
 
-    <section class="portada" id="inicio">
-        <div class="portada-contenido">
-            <span class="etiqueta">DESCUBRÍ MENDOZA</span>
 
-            <h1>Mendoza, a tu manera.</h1>
+  <!-- PORTADA -->
+  <main>
 
-            <p>
-                Encontrá tu lugar y viví tu próxima experiencia.
-                Alojamientos, excursiones y aventuras para disfrutar
-                nuestra provincia.
-            </p>
+    <section id="inicio" class="portada">
+      <div class="portada-contenido">
 
-            <a href="#alojamientos" class="boton">
-                DESCUBRIR ALOJAMIENTOS
-            </a>
-        </div>
-    </section>
+        <p class="portada-etiqueta">DESCUBRÍ UNA EXPERIENCIA DIFERENTE</p>
 
-    <section class="presentacion">
-        <span class="etiqueta-azul">BIENVENIDOS</span>
+        <h1>Mendoza, a tu manera.</h1>
 
-        <h2>Todo Mendoza en un solo destino</h2>
-
-        <p id="descripcion-empresa">
-            Descubrí alojamientos y experiencias únicas en Mendoza.
+        <p>
+          Naturaleza, aventura, montaña, vinos y lugares únicos.
+          Viví Mendoza con nosotros.
         </p>
+
+        <a href="#paquetes" class="boton boton-principal">
+          DESCUBRIR EXPERIENCIAS
+        </a>
+
+      </div>
     </section>
 
-    <section class="seccion alojamientos" id="alojamientos">
 
-        <div class="titulo-seccion">
-            <span class="etiqueta-azul">DÓNDE ALOJARTE</span>
-            <h2>Nuestros alojamientos</h2>
-            <p>Encontrá el lugar ideal para tu próxima estadía.</p>
+    <!-- PRESENTACIÓN -->
+    <section class="presentacion">
+      <div class="contenedor">
+
+        <p class="etiqueta-seccion">BIENVENIDOS</p>
+
+        <h2>Tu próxima aventura comienza acá</h2>
+
+        <p>
+          En Destino Mendoza te ayudamos a descubrir los mejores
+          rincones de nuestra provincia. Encontrá alojamientos,
+          excursiones y actividades para disfrutar cada momento.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ALOJAMIENTOS -->
+    <section id="alojamientos" class="seccion">
+      <div class="contenedor">
+
+        <div class="encabezado-seccion">
+          <p class="etiqueta-seccion">DESCANSÁ Y DISFRUTÁ</p>
+
+          <h2>Alojamientos en Mendoza</h2>
+
+          <p>
+            Conocé nuestros alojamientos disponibles y encontrá
+            el lugar ideal para tu estadía.
+          </p>
         </div>
 
         <div id="lista-alojamientos" class="tarjetas">
-            <p class="mensaje-carga">Cargando alojamientos...</p>
+
+          <p class="mensaje-carga">
+            Cargando alojamientos...
+          </p>
+
         </div>
 
+      </div>
     </section>
 
-    <section class="experiencias" id="experiencias">
 
-        <div class="titulo-seccion">
-            <span class="etiqueta-azul">DESCUBRÍ Y DISFRUTÁ</span>
-            <h2>Viví Mendoza</h2>
-            <p>Experiencias para todos los gustos.</p>
+    <!-- PAQUETES TURÍSTICOS -->
+    <section id="paquetes" class="seccion seccion-alternativa">
+      <div class="contenedor">
+
+        <div class="encabezado-seccion">
+          <p class="etiqueta-seccion">EXPLORÁ MENDOZA</p>
+
+          <h2>Excursiones y paquetes turísticos</h2>
+
+          <p>
+            Elegí tu próxima experiencia y preparate para vivir
+            momentos inolvidables.
+          </p>
+        </div>
+
+        <div id="lista-paquetes" class="tarjetas">
+
+          <p class="mensaje-carga">
+            Cargando excursiones...
+          </p>
+
+        </div>
+
+        <p class="nota-precios">
+          Los precios publicados son orientativos y están sujetos
+          a confirmación al momento de realizar la reserva.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- EXPERIENCIAS -->
+    <section id="experiencias" class="seccion">
+      <div class="contenedor">
+
+        <div class="encabezado-seccion">
+          <p class="etiqueta-seccion">DESCUBRÍ TODO LO QUE MENDOZA OFRECE</p>
+
+          <h2>Experiencias para todos los gustos</h2>
+
+          <p>
+            Desde la tranquilidad de la montaña hasta la emoción
+            de las actividades de aventura.
+          </p>
         </div>
 
         <div class="experiencias-grid">
 
-            <article class="experiencia">
-                <div class="experiencia-icono">🏔️</div>
-                <h3>Montaña</h3>
-                <p>Descubrí paisajes increíbles y excursiones.</p>
-            </article>
+          <article class="experiencia-card">
+            <div class="experiencia-icono">🏔️</div>
+            <h3>Montaña</h3>
+            <p>
+              Paisajes increíbles, caminos de altura y naturaleza.
+            </p>
+          </article>
 
-            <article class="experiencia">
-                <div class="experiencia-icono">🐎</div>
-                <h3>Aventura</h3>
-                <p>Cabalgatas, rafting y actividades al aire libre.</p>
-            </article>
+          <article class="experiencia-card">
+            <div class="experiencia-icono">🚣</div>
+            <h3>Aventura</h3>
+            <p>
+              Rafting, canopy y actividades para disfrutar al máximo.
+            </p>
+          </article>
 
-            <article class="experiencia">
-                <div class="experiencia-icono">🍷</div>
-                <h3>Vinos y bodegas</h3>
-                <p>Degustaciones y gastronomía mendocina.</p>
-            </article>
+          <article class="experiencia-card">
+            <div class="experiencia-icono">🍷</div>
+            <h3>Vinos y bodegas</h3>
+            <p>
+              Descubrí los sabores y aromas de nuestra tierra.
+            </p>
+          </article>
 
-            <article class="experiencia">
-                <div class="experiencia-icono">🚐</div>
-                <h3>Excursiones</h3>
-                <p>Conocé los principales atractivos de Mendoza.</p>
-            </article>
+          <article class="experiencia-card">
+            <div class="experiencia-icono">🌄</div>
+            <h3>Excursiones</h3>
+            <p>
+              Conocé lugares únicos y disfrutá cada recorrido.
+            </p>
+          </article>
 
         </div>
+
+      </div>
     </section>
 
-    <section class="contacto" id="contacto">
 
-        <span class="etiqueta">TU PRÓXIMO VIAJE COMIENZA AQUÍ</span>
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto">
+      <div class="contenedor">
 
-        <h2>¿Querés conocer Mendoza?</h2>
+        <p class="etiqueta-seccion">ESTAMOS PARA AYUDARTE</p>
+
+        <h2>¿Preparamos tu próxima experiencia?</h2>
 
         <p>
-            Escribinos. Te ayudamos a encontrar alojamiento
-            y organizar tu próxima experiencia.
+          Consultanos por alojamientos, excursiones, disponibilidad
+          y reservas. Te ayudamos a organizar tu viaje.
         </p>
 
-        <a id="boton-whatsapp" href="#" class="boton boton-blanco">
-            CONSULTAR POR WHATSAPP
+        <a
+          id="boton-whatsapp"
+          href="#"
+          class="boton boton-principal"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CONSULTAR POR WHATSAPP
         </a>
 
+      </div>
     </section>
 
-</main>
+  </main>
 
-<footer class="footer">
 
-    <h3>DESTINO MENDOZA</h3>
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <div class="contenedor">
 
-    <p>Turismo & Experiencias</p>
+      <div class="footer-marca">
+        <h3>DESTINO MENDOZA</h3>
+        <p>TURISMO & EXPERIENCIAS</p>
+      </div>
 
-    <div class="redes">
-        <a id="facebook" href="#" target="_blank" rel="noopener noreferrer" hidden>Facebook</a>
-        <a id="instagram" href="#" target="_blank" rel="noopener noreferrer" hidden>Instagram</a>
-    </div>
+      <div class="footer-redes">
+        <a id="enlace-instagram" href="#" target="_blank"
+           rel="noopener noreferrer" hidden>Instagram</a>
 
-    <p class="copyright">
-        © <span id="anio"></span> Destino Mendoza.
+        <a id="enlace-facebook" href="#" target="_blank"
+           rel="noopener noreferrer" hidden>Facebook</a>
+      </div>
+
+      <p class="footer-copy">
+        © <span id="anio-actual"></span> Destino Mendoza.
         Todos los derechos reservados.
-    </p>
+      </p>
 
-</footer>
+    </div>
+  </footer>
 
-<script src="assets/js/app.js"></script>
+
+  <!-- JAVASCRIPT -->
+  <script src="assets/js/app.js"></script>
 
 </body>
-  </html>
+    </html>
