@@ -1,11 +1,11 @@
 {
   "actualizado": "2026-11-12",
   "moneda": "ARS",
-  "nota_precios": "Precios iniciales estimativos por persona. Confirmar costos y disponibilidad con transportistas y prestadores antes de vender.",
+  "nota_precios": "Precios estimativos de lanzamiento por persona. Consultar disponibilidad y confirmar tarifa antes de reservar.",
   "condiciones_generales": {
     "transporte": "Incluye transporte ida y vuelta desde un punto de encuentro céntrico de Mendoza capital. Recogidas fuera de esa zona pueden tener costo adicional.",
-    "reserva": "Reserva sujeta a disponibilidad y confirmación del prestador.",
-    "tarifa": "Precio por persona. Las actividades, entradas, comidas y degustaciones se detallan en cada paquete."
+    "reserva": "Todas las reservas están sujetas a disponibilidad y confirmación previa.",
+    "tarifa": "Los precios son por persona. Las entradas, comidas, degustaciones y extras se detallan en cada experiencia."
   },
   "paquetes": [
     {
@@ -14,15 +14,16 @@
       "nombre": "City Tour por Mendoza",
       "categoria": "Ciudad y cultura",
       "emoji": "🏙️",
-      "imagen_principal": "assets/img/paquetes/city-tour-mendoza.webp",
+      "imagen_principal": "assets/img/paquetes/a.png",
       "precio_por_persona": 49000,
       "precio_estado": "estimativo",
       "duracion": "4 horas",
-      "descripcion": "Conocé los rincones más representativos de la Ciudad de Mendoza y sus alrededores.",
+      "descripcion": "Descubrí la Ciudad de Mendoza, sus plazas, avenidas arboladas, espacios históricos y lugares emblemáticos. Un recorrido ideal para conocer la capital mendocina.",
+      "destacado": "Conocé la historia y los rincones más lindos de Mendoza.",
       "incluye": [
-        "Transporte ida y vuelta",
+        "Transporte ida y vuelta desde el punto de encuentro céntrico",
         "Recorrido panorámico por la ciudad",
-        "Paradas para fotografías",
+        "Paradas fotográficas según el recorrido",
         "Coordinación durante la excursión"
       ],
       "no_incluye": [
@@ -30,8 +31,26 @@
         "Entradas a atractivos pagos",
         "Gastos personales"
       ],
-      "actividad": "Recorrido urbano y visita panorámica al Cerro de la Gloria, sujeto a itinerario.",
-      "consulta": "Quiero consultar por el City Tour por Mendoza."
+      "itinerario": [
+        {
+          "momento": "Salida",
+          "detalle": "Encuentro del grupo y salida desde el punto acordado."
+        },
+        {
+          "momento": "Centro histórico",
+          "detalle": "Recorrido por el centro, plazas y principales avenidas."
+        },
+        {
+          "momento": "Paradas fotográficas",
+          "detalle": "Visita a puntos emblemáticos y espacios verdes."
+        },
+        {
+          "momento": "Regreso",
+          "detalle": "Retorno al punto de encuentro en Mendoza."
+        }
+      ],
+      "actividad": "El orden de las paradas puede modificarse por tránsito, eventos o condiciones operativas.",
+      "consulta": "Hola, quiero consultar y reservar el City Tour por Mendoza."
     },
     {
       "id": "alta-montana",
@@ -39,15 +58,16 @@
       "nombre": "Alta Montaña",
       "categoria": "Montaña",
       "emoji": "🏔️",
-      "imagen_principal": "assets/img/paquetes/alta-montana.webp",
+      "imagen_principal": "assets/img/paquetes/b.png",
       "precio_por_persona": 99000,
       "precio_estado": "estimativo",
       "duracion": "Día completo",
-      "descripcion": "Una excursión por la cordillera mendocina, con paisajes inolvidables y paradas en sitios emblemáticos.",
+      "descripcion": "Viví una excursión por la imponente cordillera de los Andes mendocinos. Descubrí paisajes de montaña, ríos, embalses y lugares emblemáticos de nuestra provincia.",
+      "destacado": "Una experiencia inolvidable entre montañas y paisajes cordilleranos.",
       "incluye": [
-        "Transporte ida y vuelta",
-        "Recorrido por Potrerillos y Uspallata",
-        "Paradas panorámicas según condiciones de ruta",
+        "Transporte ida y vuelta desde Mendoza capital",
+        "Recorrido panorámico por la cordillera",
+        "Paradas fotográficas en lugares habilitados",
         "Coordinación durante la excursión"
       ],
       "no_incluye": [
@@ -55,8 +75,30 @@
         "Entradas o actividades opcionales",
         "Gastos personales"
       ],
-      "actividad": "Circuito de Alta Montaña con posibles paradas en Puente del Inca y miradores del Aconcagua. El itinerario puede cambiar por clima o estado de rutas.",
-      "consulta": "Quiero consultar por la excursión de Alta Montaña."
+      "itinerario": [
+        {
+          "momento": "Salida",
+          "detalle": "Encuentro temprano y partida hacia la zona de montaña."
+        },
+        {
+          "momento": "Potrerillos",
+          "detalle": "Recorrido panorámico y parada para disfrutar el embalse."
+        },
+        {
+          "momento": "Uspallata",
+          "detalle": "Paso por el valle y tiempo para disfrutar el paisaje."
+        },
+        {
+          "momento": "Puente del Inca",
+          "detalle": "Visita y parada fotográfica, según condiciones de acceso."
+        },
+        {
+          "momento": "Regreso",
+          "detalle": "Retorno a Mendoza capital."
+        }
+      ],
+      "actividad": "El itinerario puede variar por clima, nieve, estado de rutas y horarios. Las paradas dependen de las condiciones de acceso.",
+      "consulta": "Hola, quiero consultar y reservar la excursión de Alta Montaña."
     },
     {
       "id": "bodegas-olivicola",
@@ -64,24 +106,43 @@
       "nombre": "Vinos y Olivícola",
       "categoria": "Vinos y gastronomía",
       "emoji": "🍷",
-      "imagen_principal": "assets/img/paquetes/bodegas-olivicola.webp",
+      "imagen_principal": "assets/img/paquetes/c.png",
       "precio_por_persona": 69000,
       "precio_estado": "estimativo",
       "duracion": "Medio día",
-      "descripcion": "Descubrí sabores mendocinos con una visita a bodegas y una experiencia olivícola.",
+      "descripcion": "Conocé la cultura productiva mendocina visitando bodegas y establecimientos olivícolas. Descubrí cómo se elaboran algunos de los sabores más representativos de Mendoza.",
+      "destacado": "Descubrí los secretos del vino y el aceite de oliva mendocino.",
       "incluye": [
-        "Transporte ida y vuelta",
-        "Visitas sujetas a disponibilidad",
-        "Coordinación del recorrido"
+        "Transporte ida y vuelta desde Mendoza capital",
+        "Coordinación del recorrido",
+        "Visitas a establecimientos previamente confirmados"
       ],
       "no_incluye": [
-        "Degustaciones",
-        "Almuerzo",
-        "Compras y productos",
-        "Servicios no indicados"
+        "Degustaciones, salvo confirmación expresa",
+        "Almuerzo y otras comidas",
+        "Compras de vinos, aceites y productos",
+        "Servicios adicionales"
       ],
-      "actividad": "Visita a bodegas y olivícola. Las degustaciones y entradas se confirmarán según el establecimiento elegido.",
-      "consulta": "Quiero consultar por el paquete de Bodegas y Olivícola."
+      "itinerario": [
+        {
+          "momento": "Salida",
+          "detalle": "Encuentro y traslado hacia la zona de bodegas."
+        },
+        {
+          "momento": "Visita a bodega",
+          "detalle": "Recorrido introductorio por el establecimiento, sujeto a reserva."
+        },
+        {
+          "momento": "Experiencia olivícola",
+          "detalle": "Conocimiento del proceso de elaboración del aceite de oliva."
+        },
+        {
+          "momento": "Regreso",
+          "detalle": "Retorno a Mendoza capital."
+        }
+      ],
+      "actividad": "Los establecimientos, visitas guiadas y degustaciones se confirman antes de la reserva. Las degustaciones pueden tener costo adicional.",
+      "consulta": "Hola, quiero consultar y reservar el paquete de Vinos y Olivícola."
     },
     {
       "id": "rafting",
@@ -89,24 +150,43 @@
       "nombre": "Rafting en Mendoza",
       "categoria": "Aventura",
       "emoji": "🚣",
-      "imagen_principal": "assets/img/paquetes/rafting.webp",
+      "imagen_principal": "assets/img/paquetes/d.png",
       "precio_por_persona": 119000,
       "precio_estado": "estimativo",
       "duracion": "Medio día",
-      "descripcion": "Viví la emoción del rafting en los ríos de montaña con guías y operadores habilitados.",
+      "descripcion": "Viví una aventura en los ríos de montaña de Mendoza. Disfrutá los rápidos, la naturaleza y una experiencia llena de adrenalina con acompañamiento del operador.",
+      "destacado": "Adrenalina y naturaleza en una aventura inolvidable.",
       "incluye": [
-        "Transporte ida y vuelta",
+        "Transporte ida y vuelta desde Mendoza capital",
         "Actividad de rafting según circuito contratado",
         "Equipamiento de seguridad provisto por el prestador",
-        "Instrucción previa"
+        "Instrucción previa y acompañamiento del operador"
       ],
       "no_incluye": [
         "Comidas y bebidas",
         "Fotografías o videos",
-        "Servicios adicionales"
+        "Servicios adicionales no indicados"
       ],
-      "actividad": "Descenso de rafting sujeto a caudal, clima, edad mínima y condiciones de seguridad establecidas por el operador.",
-      "consulta": "Quiero consultar por el paquete de Rafting."
+      "itinerario": [
+        {
+          "momento": "Traslado",
+          "detalle": "Viaje desde Mendoza hacia la base del operador."
+        },
+        {
+          "momento": "Preparación",
+          "detalle": "Recepción, registro y charla de seguridad."
+        },
+        {
+          "momento": "Actividad",
+          "detalle": "Descenso de rafting por el tramo contratado."
+        },
+        {
+          "momento": "Regreso",
+          "detalle": "Finalización de la actividad y retorno a Mendoza."
+        }
+      ],
+      "actividad": "Actividad sujeta a caudal del río, clima, edad mínima y requisitos de seguridad del prestador. La salida puede reprogramarse por seguridad.",
+      "consulta": "Hola, quiero consultar y reservar el paquete de Rafting."
     },
     {
       "id": "canopy-tirolina",
@@ -114,144 +194,41 @@
       "nombre": "Canopy y Tirolesa",
       "categoria": "Aventura",
       "emoji": "🪂",
-      "imagen_principal": "assets/img/paquetes/canopy-tirolina.webp",
+      "imagen_principal": "assets/img/paquetes/e.png",
       "precio_por_persona": 109000,
       "precio_estado": "estimativo",
       "duracion": "Medio día",
-      "descripcion": "Disfrutá la montaña desde otra perspectiva con un circuito de canopy y tirolesas.",
+      "descripcion": "Disfrutá la montaña desde otra perspectiva con un circuito de canopy y tirolesas. Una experiencia para contemplar el paisaje y vivir la aventura en altura.",
+      "destacado": "Aventura, emoción y paisajes increíbles.",
       "incluye": [
-        "Transporte ida y vuelta",
+        "Transporte ida y vuelta desde Mendoza capital",
         "Circuito de canopy contratado",
-        "Elementos de seguridad",
-        "Instrucciones del personal"
+        "Elementos de seguridad provistos por el prestador",
+        "Instrucciones del personal especializado"
       ],
       "no_incluye": [
         "Comidas y bebidas",
         "Fotografías o videos",
         "Actividades adicionales"
       ],
-      "actividad": "Circuito de canopy sujeto a disponibilidad, condiciones climáticas, peso y requisitos del prestador.",
-      "consulta": "Quiero consultar por el paquete de Canopy y Tirolesa."
-    },
-    {
-      "id": "cabalgata",
-      "activo": true,
-      "nombre": "Cabalgata de Montaña",
-      "categoria": "Naturaleza y aventura",
-      "emoji": "🐎",
-      "imagen_principal": "assets/img/paquetes/cabalgata.webp",
-      "precio_por_persona": 215000,
-      "precio_estado": "estimativo",
-      "duracion": "Medio día",
-      "descripcion": "Conectá con la naturaleza y recorré paisajes mendocinos a caballo junto a guías locales.",
-      "incluye": [
-        "Transporte ida y vuelta",
-        "Cabalgata guiada según recorrido contratado",
-        "Instrucciones básicas del prestador"
+      "itinerario": [
+        {
+          "momento": "Traslado",
+          "detalle": "Salida desde Mendoza hacia el centro de aventura."
+        },
+        {
+          "momento": "Preparación",
+          "detalle": "Registro, colocación del equipo y charla de seguridad."
+        },
+        {
+          "momento": "Circuito",
+          "detalle": "Realización de las etapas de canopy incluidas en la contratación."
+        },
+        {
+          "momento": "Regreso",
+          "detalle": "Finalización de la actividad y traslado a Mendoza."
+        }
       ],
-      "no_incluye": [
-        "Comidas y bebidas",
-        "Traslados especiales fuera del punto de salida",
-        "Servicios adicionales"
-      ],
-      "actividad": "Cabalgata sujeta a disponibilidad, clima, edad y condiciones físicas requeridas por el prestador.",
-      "consulta": "Quiero consultar por la Cabalgata de Montaña."
-    },
-    {
-      "id": "trekking",
-      "activo": true,
-      "nombre": "Trekking en la Montaña",
-      "categoria": "Naturaleza y aventura",
-      "emoji": "🥾",
-      "imagen_principal": "assets/img/paquetes/trekking.webp",
-      "precio_por_persona": 99000,
-      "precio_estado": "estimativo",
-      "duracion": "Medio día",
-      "descripcion": "Explorá senderos y miradores de montaña acompañado por un guía.",
-      "incluye": [
-        "Transporte ida y vuelta",
-        "Actividad guiada según circuito",
-        "Orientación e indicaciones de seguridad"
-      ],
-      "no_incluye": [
-        "Comidas y bebidas",
-        "Equipamiento personal",
-        "Entradas o permisos cuando correspondan"
-      ],
-      "actividad": "Nivel de dificultad, duración y recorrido a confirmar según circuito, clima y condición del grupo.",
-      "consulta": "Quiero consultar por el paquete de Trekking."
-    },
-    {
-      "id": "termas-cacheuta",
-      "activo": true,
-      "nombre": "Termas de Cacheuta",
-      "categoria": "Relax y bienestar",
-      "emoji": "♨️",
-      "imagen_principal": "assets/img/paquetes/termas-cacheuta.webp",
-      "precio_por_persona": 85000,
-      "precio_estado": "estimativo",
-      "duracion": "Día completo",
-      "descripcion": "Regalate un día de descanso entre montañas y aguas termales.",
-      "incluye": [
-        "Transporte ida y vuelta desde Mendoza capital"
-      ],
-      "no_incluye": [
-        "Entrada al complejo termal",
-        "Comidas y bebidas",
-        "Servicios de spa"
-      ],
-      "actividad": "Día en el complejo termal de Cacheuta. La entrada se abona aparte y depende de disponibilidad y tarifa vigente.",
-      "consulta": "Quiero consultar por el paquete a las Termas de Cacheuta."
-    },
-    {
-      "id": "kayak-potrerillos",
-      "activo": true,
-      "nombre": "Kayak en Potrerillos",
-      "categoria": "Aventura",
-      "emoji": "🛶",
-      "imagen_principal": "assets/img/paquetes/kayak-potrerillos.webp",
-      "precio_por_persona": 125000,
-      "precio_estado": "estimativo",
-      "duracion": "Medio día",
-      "descripcion": "Disfrutá el paisaje de montaña desde el agua en el Dique Potrerillos.",
-      "incluye": [
-        "Transporte ida y vuelta",
-        "Actividad de kayak con prestador",
-        "Elementos de seguridad provistos por el operador"
-      ],
-      "no_incluye": [
-        "Comidas y bebidas",
-        "Fotografías o videos",
-        "Actividades adicionales"
-      ],
-      "actividad": "Actividad sujeta a viento, clima, condiciones del dique y requisitos de seguridad del prestador.",
-      "consulta": "Quiero consultar por el paquete de Kayak en Potrerillos."
-    },
-    {
-      "id": "valle-de-uco",
-      "activo": true,
-      "nombre": "Valle de Uco",
-      "categoria": "Paisajes y vinos",
-      "emoji": "🍇",
-      "imagen_principal": "assets/img/paquetes/valle-de-uco.webp",
-      "precio_por_persona": 119000,
-      "precio_estado": "estimativo",
-      "duracion": "Día completo",
-      "descripcion": "Recorré los paisajes del Valle de Uco, sus viñedos y pueblos al pie de la cordillera.",
-      "incluye": [
-        "Transporte ida y vuelta",
-        "Recorrido panorámico",
-        "Paradas para fotografías",
-        "Coordinación durante la excursión"
-      ],
-      "no_incluye": [
-        "Almuerzo",
-        "Degustaciones",
-        "Entradas a bodegas",
-        "Compras y gastos personales"
-      ],
-      "actividad": "Circuito panorámico por el Valle de Uco. Visitas a bodegas o establecimientos sujetas a reserva y costos adicionales.",
-      "consulta": "Quiero consultar por el paquete al Valle de Uco."
-    }
-  ]
+      "actividad": "Circuito sujeto a disponibilidad, clima, peso, edad y requisitos del prestador. Se realiza bajo sus normas de seguridad.",
+      "consulta": "Hola, quiero consultar y reservar el paquete de Canopy  ]
     }
