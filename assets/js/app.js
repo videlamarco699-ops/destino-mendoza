@@ -2,15 +2,13 @@
 // DESTINO MENDOZA - TURISMO & EXPERIENCIAS
 // ============================================
 
-// CONFIGURACIÓN
+// RUTAS DE LOS ARCHIVOS
 const CONFIG = {
   sitio: "data/site.json",
   alojamientos: "data/departamentos.json",
   paquetes: "data/paquetes.json",
-
-  // Dejar vacío hasta configurar una nueva API Key
-  // restringida para Google Drive API.
-  googleApiKey: "AIzaSyACva5N9oPhLXuNV-3TjDQj3yMb3UynU5M"
+  googleConfig: "assets/js/config.json",
+  googleApiKey: ""
 };
 
 let datosSitio = {};
@@ -19,46 +17,68 @@ let datosPaquetes = [];
 
 
 // ============================================
-// INICIO
+// INICIO DEL SITIO
 // ============================================
 
 document.addEventListener("DOMContentLoaded", iniciarSitio);
 
 async function iniciarSitio() {
-  document.getElementById("anio-actual").textContent =
-    new Date().getFullYear();
+  const anio = document.getElementById("anio-actual");
 
-  try {
-    const [sitio, alojamientos, paquetes] = await Promise.all([
-      cargarJSON(CONFIG.sitio),
-      cargarJSON(CONFIG.alojamientos),
-      cargarJSON(CONFIG.paquetes)
-    ]);
+  if (anio) {
+    anio.textContent = new Date().getFullYear();
+  }
 
-    datosSitio = sitio;
-    datosAlojamientos = obtenerLista(alojamientos, [
-      "alojamientos",
-      "departamentos",
-      "propiedades"
-    ]);
+  const resultados = await Promise.allSettled([
+    cargarJSONConReintentos(CONFIG.sitio),
+    cargarJSONConReintentos(CONFIG.alojamientos),
+    cargarJSONConReintentos(CONFIG.paquetes),
+    cargarConfiguracionGoogle()
+  ]);
 
-    datosPaquetes = obtenerLista(paquetes, [
-      "paquetes",
-      "excursiones",
-      "experiencias"
-    ]);
+  // CONFIGURACIÓN DEL SITIO
+  if (resultados[0].status === "fulfilled") {
+    datosSitio = resultados[0].value;
+  } else {
+    mostrarErrorRecurso(
+      "lista-alojamientos",
+      "No se pudo cargar la configuración del sitio."
+    );
+  }
+
+  // ALOJAMIENTOS
+  if (resultados[1].status === "fulfilled") {
+    datosAlojamientos = obtenerLista(
+      resultados[1].value,
+      ["alojamientos", "departamentos", "propiedades"]
+    );
 
     mostrarAlojamientos();
-    mostrarPaquetes();
-    configurarContacto();
-    configurarRedes();
-
-  } catch (error) {
-    console.error("Error al iniciar el sitio:", error);
-
-    mostrarError("lista-alojamientos");
-    mostrarError("lista-paquetes");
+  } else {
+    mostrarErrorRecurso(
+      "lista-alojamientos",
+      "No se pudieron cargar los alojamientos."
+    );
   }
+
+  // PAQUETES
+  if (resultados[2].status === "fulfilled") {
+    datosPaquetes = obtenerLista(
+      resultados[2].value,
+      ["paquetes", "excursiones", "experiencias"]
+    );
+
+    mostrarPaquetes();
+  } else {
+    mostrarErrorRecurso(
+      "lista-paquetes",
+      "No se pudieron cargar los paquetes turísticos."
+    );
+  }
+
+  // CONTACTO Y REDES
+  configurarContacto();
+  configurarRedes();
 }
 
 
@@ -67,13 +87,56 @@ async function iniciarSitio() {
 // ============================================
 
 async function cargarJSON(ruta) {
-  const respuesta = await fetch(ruta);
+  const respuesta = await fetch(ruta, {
+    cache: "no-cache"
+  });
 
   if (!respuesta.ok) {
     throw new Error("No se pudo cargar: " + ruta);
   }
 
   return await respuesta.json();
+}
+
+
+async function cargarJSONConReintentos(ruta, intentos = 3) {
+  let ultimoError;
+
+  for (let i = 0; i < intentos; i++) {
+    try {
+      return await cargarJSON(ruta);
+    } catch (error) {
+      ultimoError = error;
+      await esperar(800 * (i + 1));
+    }
+  }
+
+  throw ultimoError;
+}
+
+
+function esperar(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+async function cargarConfiguracionGoogle() {
+  try {
+    const configuracion = await cargarJSON(
+      CONFIG.googleConfig
+    );
+
+    CONFIG.googleApiKey =
+      configuracion.googleApiKey || "";
+
+  } catch (error) {
+    console.error(
+      "No se pudo cargar la configuración de Google:",
+      error
+    );
+
+    CONFIG.googleApiKey = "";
+  }
 }
 
 
@@ -92,12 +155,63 @@ function obtenerLista(datos, posiblesClaves) {
 }
 
 
-function mostrarError(id) {
+// ============================================
+// MENSAJES DE ERROR
+// ============================================
+
+function mostrarErrorRecurso(id, mensaje) {
   const contenedor = document.getElementById(id);
 
-  if (contenedor) {
-    contenedor.innerHTML =
-      '<p class="mensaje-error">No se pudo cargar la información. Intentá nuevamente más tarde.</p>';
+  if (!contenedor) return;
+
+  contenedor.innerHTML = `
+    <div class="mensaje-error">
+      <p>${escaparHTML(mensaje)}</p>
+      <button
+        class="boton"
+        onclick="reintentarRecurso('${id}')">
+        REINTENTAR
+      </button>
+    </div>
+  `;
+}
+
+
+async function reintentarRecurso(id) {
+  try {
+    if (id === "lista-alojamientos") {
+      const datos = await cargarJSONConReintentos(
+        CONFIG.alojamientos
+      );
+
+      datosAlojamientos = obtenerLista(
+        datos,
+        ["alojamientos", "departamentos", "propiedades"]
+      );
+
+      mostrarAlojamientos();
+    }
+
+    if (id === "lista-paquetes") {
+      const datos = await cargarJSONConReintentos(
+        CONFIG.paquetes
+      );
+
+      datosPaquetes = obtenerLista(
+        datos,
+        ["paquetes", "excursiones", "experiencias"]
+      );
+
+      mostrarPaquetes();
+    }
+
+  } catch (error) {
+    console.error("Error al reintentar:", error);
+
+    mostrarErrorRecurso(
+      id,
+      "No se pudo cargar la información. Intentá nuevamente."
+    );
   }
 }
 
@@ -127,11 +241,18 @@ function obtenerTexto(valor) {
 
 
 function formatearPrecio(precio) {
-  if (precio === undefined || precio === null || precio === "") {
+  if (
+    precio === undefined ||
+    precio === null ||
+    precio === ""
+  ) {
     return "Consultar precio";
   }
 
-  if (typeof precio === "string" && /[a-záéíóú$]/i.test(precio)) {
+  if (
+    typeof precio === "string" &&
+    /[a-záéíóú$]/i.test(precio)
+  ) {
     return precio;
   }
 
@@ -201,6 +322,9 @@ function configurarContacto() {
 
 
 // ============================================
+// CONTINÚA EN LA PARTE 2
+// ============================================
+// ============================================
 // ALOJAMIENTOS
 // ============================================
 
@@ -257,18 +381,11 @@ function crearTarjetaAlojamiento(alojamiento, indice) {
   );
 
   const booking =
+    alojamiento.booking?.url ||
     alojamiento.reservas?.url ||
     alojamiento.booking_url ||
     alojamiento.url_booking ||
     "";
-
-  const carpeta = alojamiento.imagenes?.carpeta_id || "";
-
-  const imagenes = alojamiento.imagenes?.archivos || [];
-
-  const primeraImagen = imagenes.length
-    ? crearURLImagenDrive(carpeta, imagenes[0])
-    : "";
 
   return `
     <article class="tarjeta alojamiento-card">
@@ -280,13 +397,7 @@ function crearTarjetaAlojamiento(alojamiento, indice) {
         <div class="carrusel-imagenes"
              id="imagenes-${indice}">
 
-          ${
-            primeraImagen
-              ? `<img src="${escaparHTML(primeraImagen)}"
-                      alt="${escaparHTML(nombre)}"
-                      loading="lazy">`
-              : `<div class="imagen-placeholder">🏡</div>`
-          }
+          <div class="imagen-placeholder">🏡</div>
 
         </div>
 
@@ -299,7 +410,7 @@ function crearTarjetaAlojamiento(alojamiento, indice) {
                 aria-label="Imagen siguiente">❯</button>
 
         <span class="carrusel-contador"
-              id="contador-${indice}">1</span>
+              id="contador-${indice}"></span>
 
       </div>
 
@@ -370,19 +481,19 @@ function crearTarjetaAlojamiento(alojamiento, indice) {
 // FOTOS DE GOOGLE DRIVE
 // ============================================
 
-function crearURLImagenDrive(carpetaId, archivo) {
-  if (!archivo) return "";
+function normalizarNombreArchivo(nombre) {
+  return String(nombre || "")
+    .trim()
+    .toLowerCase();
+}
 
-  // Si ya es una URL completa, se utiliza directamente.
-  if (typeof archivo === "string" &&
-      archivo.startsWith("http")) {
-    return archivo;
-  }
 
-  const id = String(archivo).replace(/\.[^/.]+$/, "");
+function crearURLImagenDrive(archivoId) {
+  if (!archivoId) return "";
 
   return "https://drive.google.com/thumbnail?id=" +
-    encodeURIComponent(id) + "&sz=w1200";
+    encodeURIComponent(archivoId) +
+    "&sz=w1200";
 }
 
 
@@ -391,34 +502,48 @@ async function buscarImagenesDrive(carpetaId) {
     return [];
   }
 
-  const consulta = encodeURIComponent(
-    `'${carpetaId}' in parents and trashed=false`
-  );
-
-  const url =
-    "https://www.googleapis.com/drive/v3/files" +
-    "?q=" + consulta +
-    "&fields=files(id,name,mimeType)" +
-    "&pageSize=100" +
-    "&key=" + encodeURIComponent(CONFIG.googleApiKey);
+  let archivos = [];
+  let pageToken = "";
 
   try {
-    const respuesta = await fetch(url);
+    do {
+      const parametros = new URLSearchParams({
+        q: `'${carpetaId}' in parents and trashed=false`,
+        fields: "nextPageToken,files(id,name,mimeType)",
+        pageSize: "100",
+        key: CONFIG.googleApiKey
+      });
 
-    if (!respuesta.ok) {
-      throw new Error("Error consultando Google Drive");
-    }
+      if (pageToken) {
+        parametros.set("pageToken", pageToken);
+      }
 
-    const datos = await respuesta.json();
+      const url =
+        "https://www.googleapis.com/drive/v3/files?" +
+        parametros.toString();
 
-    return (datos.files || [])
-      .filter(archivo =>
-        archivo.mimeType?.startsWith("image/")
-      )
-      .map(archivo => archivo.id);
+      const respuesta = await fetch(url);
+
+      if (!respuesta.ok) {
+        throw new Error("Error consultando Google Drive");
+      }
+
+      const datos = await respuesta.json();
+
+      archivos = archivos.concat(
+        (datos.files || []).filter(archivo =>
+          archivo.mimeType?.startsWith("image/")
+        )
+      );
+
+      pageToken = datos.nextPageToken || "";
+
+    } while (pageToken);
+
+    return archivos;
 
   } catch (error) {
-    console.error("Error cargando imágenes:", error);
+    console.error("Error buscando imágenes en Drive:", error);
     return [];
   }
 }
@@ -430,30 +555,54 @@ async function cargarFotosAlojamiento(alojamiento, indice) {
 
   if (!contenedor) return;
 
-  const carpeta = alojamiento.imagenes?.carpeta_id || "";
+  const carpetaId =
+    alojamiento.imagenes?.carpeta_id || "";
 
-  const archivos = alojamiento.imagenes?.archivos || [];
+  const nombres =
+    alojamiento.imagenes?.archivos || [];
 
-  let fotos = archivos.map(archivo =>
-    crearURLImagenDrive(carpeta, archivo)
-  );
-
-  // Si no hay archivos definidos, intentar consultar Drive.
-  if (!fotos.length && CONFIG.googleApiKey && carpeta) {
-    const ids = await buscarImagenesDrive(carpeta);
-
-    fotos = ids.map(id => crearURLImagenDrive(carpeta, id));
-  }
-
-  if (!fotos.length) {
+  if (!carpetaId || !nombres.length) {
     contenedor.innerHTML =
       '<div class="imagen-placeholder">🏡</div>';
     return;
   }
 
-  contenedor.innerHTML = fotos.map((url, posicion) => `
+  const archivosDrive = await buscarImagenesDrive(carpetaId);
+
+  const mapaArchivos = new Map();
+
+  archivosDrive.forEach(archivo => {
+    mapaArchivos.set(
+      normalizarNombreArchivo(archivo.name),
+      archivo.id
+    );
+  });
+
+  // Se respeta el orden y los nombres indicados en el JSON.
+  const fotos = nombres
+    .map(nombreArchivo => {
+      const id = mapaArchivos.get(
+        normalizarNombreArchivo(nombreArchivo)
+      );
+
+      return id
+        ? {
+            id,
+            nombre: nombreArchivo
+          }
+        : null;
+    })
+    .filter(Boolean);
+
+  if (!fotos.length) {
+    contenedor.innerHTML =
+      '<div class="imagen-placeholder">No hay imágenes disponibles</div>';
+    return;
+  }
+
+  contenedor.innerHTML = fotos.map((foto, posicion) => `
     <img
-      src="${escaparHTML(url)}"
+      src="${escaparHTML(crearURLImagenDrive(foto.id))}"
       alt="${escaparHTML(alojamiento.nombre || "Alojamiento")} - Foto ${posicion + 1}"
       loading="lazy"
       style="display:${posicion === 0 ? "block" : "none"}"
@@ -461,16 +610,19 @@ async function cargarFotosAlojamiento(alojamiento, indice) {
     >
   `).join("");
 
-  const contador = document.getElementById("contador-" + indice);
+  const contador =
+    document.getElementById("contador-" + indice);
 
   if (contador) {
     contador.textContent = "1 / " + fotos.length;
   }
 
-  const carrusel = document.getElementById("carrusel-" + indice);
+  const carrusel =
+    document.getElementById("carrusel-" + indice);
 
   if (carrusel) {
     carrusel.dataset.total = fotos.length;
+    carrusel.dataset.indice = "0";
   }
 }
 
@@ -522,6 +674,9 @@ function moverCarrusel(indice, direccion) {
 
 
 // ============================================
+// CONTINÚA EN LA PARTE 3
+// ============================================
+// ============================================
 // PAQUETES TURÍSTICOS
 // ============================================
 
@@ -564,6 +719,7 @@ function crearTarjetaPaquete(paquete) {
   const categoria = paquete.categoria || "Excursión";
 
   const precio = formatearPrecio(
+    paquete.precio_por_persona ||
     paquete.precio ||
     paquete.precio_desde ||
     ""
@@ -584,11 +740,14 @@ function crearTarjetaPaquete(paquete) {
                <h4>🗺️ Itinerario</h4>
                <ul>
                  ${itinerario.map(paso => `
-                   <li>${escaparHTML(
-                     typeof paso === "object"
-                       ? (paso.descripcion || paso.detalle || paso.nombre || "")
-                       : paso
-                   )}</li>
+                   <li>
+                     ${
+                       typeof paso === "object"
+                         ? `<strong>${escaparHTML(paso.momento || "")}</strong>
+                            ${escaparHTML(paso.detalle || paso.descripcion || "")}`
+                         : escaparHTML(paso)
+                     }
+                   </li>
                  `).join("")}
                </ul>
              </div>`
@@ -618,6 +777,12 @@ function crearTarjetaPaquete(paquete) {
                  ).join("")}
                </ul>
              </div>`
+          : ""
+      }
+
+      ${
+        paquete.actividad
+          ? `<p>${escaparHTML(paquete.actividad)}</p>`
           : ""
       }
 
@@ -693,8 +858,11 @@ function crearTarjetaPaquete(paquete) {
 // ============================================
 
 function configurarRedes() {
-  const instagram = document.getElementById("enlace-instagram");
-  const facebook = document.getElementById("enlace-facebook");
+  const instagram =
+    document.getElementById("enlace-instagram");
+
+  const facebook =
+    document.getElementById("enlace-facebook");
 
   const urlInstagram =
     datosSitio?.redes?.instagram || "";
@@ -711,4 +879,10 @@ function configurarRedes() {
     facebook.href = urlFacebook;
     facebook.hidden = false;
   }
-                         }
+}
+
+
+// ============================================
+// FIN DEL ARCHIVO
+// DESTINO MENDOZA
+// ============================================
